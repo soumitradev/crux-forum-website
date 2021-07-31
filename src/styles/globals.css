@@ -3,6 +3,25 @@
 @tailwind base;
 @tailwind utilities;
 
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-transparent: transparent;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-800: #293443;
+  --color-gray-900: #1f2833;
+
+  --color-gray-accent: #c5c6c7;
+
+  --color-cyan: #66fcf1;
+  --color-green: #45a29e;
+  --color-red: #ff6773;
+  --color-purple: #a5468b;
+}
+
 h1,
 h2,
 h3,
@@ -42,4 +61,18 @@ p {
 
 p.small {
   font-size: 0.85rem;
+}
+
+.loader {
+  -webkit-animation: loader 1.5s linear infinite;
+  animation: loader 1.5s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
