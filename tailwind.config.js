@@ -1,8 +1,26 @@
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.tsx', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
+    colors: {
+      white: 'var(--color-white)',
+      black: 'var(--color-black)',
+      transparent: 'var(--color-transparent)',
+
+      gray: {
+        50: 'var(--color-gray-50)',
+        100: 'var(--color-gray-100)',
+        200: 'var(--color-gray-200)',
+        800: 'var(--color-gray-800)',
+        900: 'var(--color-gray-900)',
+        accent: 'var(--color-gray-accent)',
+      },
+      cyan: 'var(--color-cyan)',
+      green: 'var(--color-green)',
+      red: 'var(--color-red)',
+      purple: 'var(--color-purple)',
+    },
     fontFamily: {
       sans: [
         'Inter',
