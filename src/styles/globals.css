@@ -15,11 +15,13 @@
   --color-gray-900: #1f2833;
 
   --color-gray-accent: #c5c6c7;
+  --color-gray-disabled: #646464;
 
   --color-cyan: #66fcf1;
   --color-green: #45a29e;
   --color-red: #ff6773;
   --color-purple: #a5468b;
+  --color-blue: #66b1fc;
 }
 
 h1,
