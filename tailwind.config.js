@@ -15,11 +15,13 @@ module.exports = {
         800: 'var(--color-gray-800)',
         900: 'var(--color-gray-900)',
         accent: 'var(--color-gray-accent)',
+        disabled: 'var(--color-gray-disabled)',
       },
       cyan: 'var(--color-cyan)',
       green: 'var(--color-green)',
       red: 'var(--color-red)',
       purple: 'var(--color-purple)',
+      blue: 'var(--color-blue)',
     },
     fontFamily: {
       sans: [
@@ -46,6 +48,11 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
       '7xl': '5rem',
+    },
+    extend: {
+      zIndex: {
+        '-10': '-10',
+      },
     },
   },
   variants: {
