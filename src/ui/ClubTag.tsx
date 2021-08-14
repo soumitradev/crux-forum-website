@@ -29,7 +29,7 @@ const ClubTag: React.FC<ClubTagProps> = ({
   return (
     <button
       onClick={e => onClick?.(e)}
-      className={`inline-flex items-center rounded-full px-1 py-1 transition-colors ${
+      className={`inline-flex items-center rounded-md px-1 py-1 transition-colors ${
         variant === 'select'
           ? isSelected
             ? colors[color!]

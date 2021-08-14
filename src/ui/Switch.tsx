@@ -9,8 +9,16 @@ const variants = {
 };
 
 const sizes = {
-  sm: 'h-5 w-10',
-  md: 'h-7 w-14',
+  sm: {
+    bg: 'h-[20px] w-[44px]',
+    thumb: 'h-[17px] w-[17px]',
+    active: 'translate-x-6',
+  },
+  md: {
+    bg: 'h-[30px] w-[65px]',
+    thumb: 'h-[27px] w-[27px]',
+    active: 'translate-x-[34px]',
+  },
 };
 
 interface SwitchProps {
@@ -42,24 +50,19 @@ const Switch: React.FC<SwitchProps> = ({
             toggleActive();
             onChange();
           }}
-          className={`${
-            active ? variants[variant] : 'bg-gray-accent'
-          } relative inline-flex items-center rounded-full ${sizes[size]}`}
+          className={`${active ? variants[variant] : 'bg-gray-accent'}
+          relative inline-flex flex-shrink-0 ${
+            sizes[size].bg
+          }  border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
         >
-          <span className='sr-only'>Toggle Theme</span>
-          {size === 'md' ? (
-            <span
-              className={`${variant === 'cyan' ? 'bg-gray-900' : 'bg-white'} ${
-                active ? 'translate-x-8' : 'translate-x-1'
-              } inline-block w-4 h-4 transform rounded-full transition-all duration-100 ease-out`}
-            />
-          ) : (
-            <span
-              className={`${variant === 'cyan' ? 'bg-gray-900' : 'bg-white'} ${
-                active ? 'translate-x-6' : 'translate-x-1'
-              } inline-block w-3 h-3 transform rounded-full transition-all duration-100 ease-out`}
-            />
-          )}
+          <span className='sr-only'>Use setting</span>
+          <span
+            aria-hidden='true'
+            className={`${active ? sizes[size].active : 'translate-x-0'}
+            ${
+              sizes[size].thumb
+            } pointer-events-none inline-block  rounded-full bg-black shadow-lg transform ring-0 transition ease-in-out duration-200`}
+          />
         </HSwitch>
         {right ? right : null}
       </div>
