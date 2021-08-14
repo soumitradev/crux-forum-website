@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Loader from './Loader';
 
 const variants = {
@@ -7,7 +7,7 @@ const variants = {
   purple: 'bg-purple text-gray-100 border-transparent hover:opacity-80',
   red: 'bg-red text-gray-100 border-transparent hover:opacity-80',
   'cyan-outline':
-    'border-cyan dark:text-cyan hover:bg-cyan dark:hover:text-gray-900',
+    'border-cyan dark:text-white hover:bg-cyan dark:hover:text-gray-900',
   'green-outline': 'border-green text-green hover:bg-green hover:text-gray-900',
   'purple-outline':
     'border-purple text-purple hover:bg-purple hover:text-gray-900',
@@ -39,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({
       <button
         disabled={disabled}
         {...props}
-        className={`flex items-center gap-2 justify-center px-4 py-3 font-semibold rounded-md border-2 transition-all duration-300 ${
+        className={`flex items-center gap-2 justify-center px-4 py-2 font-semibold rounded-md border-2 transition-all duration-300 ${
           variants[disabled ? 'disabled' : variant]
         } ${className ? className : ''}`}
       >

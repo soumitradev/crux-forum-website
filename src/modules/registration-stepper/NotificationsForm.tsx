@@ -44,28 +44,32 @@ const NotificationsForm: React.FC = () => {
       </h2>
       <div className='my-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3'>
         <ClubTag
-          name='cRux'
+          variant='select'
+          name='crux'
           color='red'
-          selectedTags={selectedTags}
-          onSelect={onSelect}
+          isSelected={selectedTags.includes('crux')}
+          onClick={() => onSelect('crux')}
         />
         <ClubTag
+          variant='select'
           name='cultural'
           color='purple'
-          selectedTags={selectedTags}
-          onSelect={onSelect}
+          isSelected={selectedTags.includes('cultural')}
+          onClick={() => onSelect('cultural')}
         />
         <ClubTag
+          variant='select'
           name='sangam'
           color='green'
-          selectedTags={selectedTags}
-          onSelect={onSelect}
+          isSelected={selectedTags.includes('sangam')}
+          onClick={() => onSelect('sangam')}
         />
         <ClubTag
+          variant='select'
           name='New Club'
           color='green'
-          selectedTags={selectedTags}
-          onSelect={onSelect}
+          isSelected={selectedTags.includes('New Club')}
+          onClick={() => onSelect('New Club')}
         />
       </div>
 

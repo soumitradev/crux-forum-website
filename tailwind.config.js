@@ -17,6 +17,7 @@ module.exports = {
         accent: 'var(--color-gray-accent)',
         disabled: 'var(--color-gray-disabled)',
       },
+
       cyan: 'var(--color-cyan)',
       green: 'var(--color-green)',
       red: 'var(--color-red)',

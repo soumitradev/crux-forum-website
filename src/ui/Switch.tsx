@@ -8,25 +8,34 @@ const variants = {
   purple: 'bg-purple',
 };
 
+const sizes = {
+  sm: 'h-5 w-10',
+  md: 'h-7 w-14',
+};
+
 interface SwitchProps {
   active: boolean;
   toggleActive: () => void;
   onChange: () => void;
-  icon?: React.ReactNode;
+  left?: React.ReactNode;
+  right?: React.ReactNode;
   variant?: keyof typeof variants;
+  size?: 'md' | 'sm';
 }
 
 const Switch: React.FC<SwitchProps> = ({
   active,
-  icon,
+  left,
+  right,
   toggleActive,
   onChange,
   variant = 'cyan',
+  size = 'md',
 }) => {
   return (
     <>
       <div className='flex gap-2 items-center'>
-        {icon ? icon : null}
+        {left ? left : null}
         <HSwitch
           checked={active}
           onChange={() => {
@@ -35,15 +44,24 @@ const Switch: React.FC<SwitchProps> = ({
           }}
           className={`${
             active ? variants[variant] : 'bg-gray-accent'
-          } relative inline-flex items-center h-8 rounded-full w-14`}
+          } relative inline-flex items-center rounded-full ${sizes[size]}`}
         >
           <span className='sr-only'>Toggle Theme</span>
-          <span
-            className={`${
-              active ? 'translate-x-8' : 'translate-x-1'
-            } inline-block w-4 h-4 transform bg-white rounded-full transition-all duration-100 ease-out`}
-          />
+          {size === 'md' ? (
+            <span
+              className={`${variant === 'cyan' ? 'bg-gray-900' : 'bg-white'} ${
+                active ? 'translate-x-8' : 'translate-x-1'
+              } inline-block w-4 h-4 transform rounded-full transition-all duration-100 ease-out`}
+            />
+          ) : (
+            <span
+              className={`${variant === 'cyan' ? 'bg-gray-900' : 'bg-white'} ${
+                active ? 'translate-x-6' : 'translate-x-1'
+              } inline-block w-3 h-3 transform rounded-full transition-all duration-100 ease-out`}
+            />
+          )}
         </HSwitch>
+        {right ? right : null}
       </div>
     </>
   );

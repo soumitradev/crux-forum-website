@@ -1,7 +1,6 @@
-import * as React from 'react';
-import MoonIcon from '../../ui/icons/MoonIcon';
-import SunIcon from '../../ui/icons/SunIcon';
+import React from 'react';
 import Switch from '../../ui/Switch';
+import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 import { ThemeContext } from './ThemeContextProvider';
 
 interface ThemeTogglerProps {}
@@ -16,7 +15,13 @@ const ThemeToggler: React.FC<ThemeTogglerProps> = ({}) => {
 
   return (
     <Switch
-      icon={theme === 'light' ? <MoonIcon /> : <SunIcon />}
+      left={
+        theme === 'light' ? (
+          <MoonIcon className='h-4 w-4' />
+        ) : (
+          <SunIcon className='h-4 w-4' />
+        )
+      }
       active={active}
       toggleActive={() => setActive(!active)}
       variant='purple'

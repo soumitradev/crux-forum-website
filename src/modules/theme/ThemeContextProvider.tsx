@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 interface ThemeProps {
   theme: 'light' | 'dark';
@@ -40,7 +40,9 @@ const ThemeContextProvider: React.FC<any> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <div className='bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen'>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 };
