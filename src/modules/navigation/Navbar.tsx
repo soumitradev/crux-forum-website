@@ -30,7 +30,10 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
             </IconButton>
           </Link>
 
-          <Menu as='div' className='relative inline-block text-left '>
+          <Menu
+            as='div'
+            className='relative inline-block text-left ring-transparent ring-0'
+          >
             <div>
               <Menu.Button>
                 <Avatar size='xs' />
@@ -45,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
               leaveFrom='transform opacity-100 scale-100'
               leaveTo='transform opacity-0 scale-95'
             >
-              <Menu.Items className='absolute right-0 w-56 mt-2 origin-top-right bg-gray-900 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+              <Menu.Items className='absolute right-0 w-56 mt-2 origin-top-right bg-gray-800 divide-y divide-white rounded-md shadow-lg focus:outline-none'>
                 <div className='px-1 py-1 '>
                   <Menu.Item>
                     <Link href='/profile/users/me'>

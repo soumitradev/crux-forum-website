@@ -48,7 +48,9 @@ const Settings: React.FC<SettingsProps> = ({}) => {
               onChange={() => {}}
               toggleActive={() => {}}
               variant='cyan'
-              right={<p className='text-white'>Notifications</p>}
+              right={
+                <p className='text-white font-bold text-lg'>Notifications</p>
+              }
             />
           </div>
 
@@ -65,14 +67,16 @@ const Settings: React.FC<SettingsProps> = ({}) => {
             onChange={() => {}}
             toggleActive={() => {}}
             variant='cyan'
-            right={<p className='text-white'>Daily round up e-mails</p>}
+            right={
+              <p className='text-white font-bold text-lg'>
+                Daily round up e-mails
+              </p>
+            }
           />
         </div>
 
         <div className='bg-gray-800 rounded p-4'>
-          <h4 className='font-semibold text-md md:text-md mb-5'>
-            Privacy Options
-          </h4>
+          <p className='font-bold text-lg mb-5'>Privacy Options</p>
 
           <div className='flex gap-3 flex-col'>
             <Switch

@@ -39,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({
       <button
         disabled={disabled}
         {...props}
-        className={`flex items-center gap-2 justify-center px-4 py-2 font-semibold rounded-md border-2 transition-all duration-300 ${
+        className={`flex items-center gap-2 justify-center px-4 py-2 font-semibold rounded border-2 transition-all duration-300 ${
           variants[disabled ? 'disabled' : variant]
         } ${className ? className : ''}`}
       >

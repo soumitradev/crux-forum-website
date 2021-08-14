@@ -40,7 +40,7 @@ const ThemeContextProvider: React.FC<any> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className='bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen'>
+      <div className='bg-white dark:bg-gray-900 dark:text-white min-h-screen'>
         {children}
       </div>
     </ThemeContext.Provider>
