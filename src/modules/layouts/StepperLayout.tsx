@@ -15,8 +15,10 @@ const StepperLayout: React.FC<StepperProps> = ({
       <div className='lg:flex flex-row lg:flex-col justify-center lg:w-1/6'>
         <p className='text-sm text-gray-accent'>
           Step{' '}
-          <span className='font-extrabold'>{step == 1 ? 'one' : 'two'}</span> of
-          two
+          <span className='font-extrabold text-white'>
+            {step == 1 ? 'one' : 'two'}
+          </span>{' '}
+          of two
         </p>
         <div className='my-2 sm:my-8 flex lg:block'>
           <button
