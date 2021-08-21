@@ -5,6 +5,7 @@ import AppStoreIcon from '../../ui/icons/AppStoreIcon';
 import PlayStoreIcon from '../../ui/icons/PlayStoreIcon';
 import Squares from '../../../public/images/squares.png';
 import Parabolas from '../../../public/images/parabolas.png';
+import IconButton from '../../ui/IconButton';
 
 const SignUpLayout: React.FC<any> = ({ children }) => {
   return (
@@ -38,12 +39,13 @@ const SignUpLayout: React.FC<any> = ({ children }) => {
             </div>
 
             <div className='inline text-center'>
-              <button className='mx-2'>
+              <IconButton className='mx-2 text-cyan'>
                 <PlayStoreIcon />
-              </button>
-              <button className='mx-2'>
+              </IconButton>
+
+              <IconButton className='mx-2 text-cyan'>
                 <AppStoreIcon />
-              </button>
+              </IconButton>
             </div>
             <div className='text-center sm:text-right'>
               <a href='/' className='text-xs'>

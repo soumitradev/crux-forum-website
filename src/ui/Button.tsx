@@ -7,7 +7,7 @@ const variants = {
   purple: 'bg-purple text-gray-100 border-transparent hover:opacity-80',
   red: 'bg-red text-gray-100 border-transparent hover:opacity-80',
   'cyan-outline':
-    'border-cyan dark:text-white hover:bg-cyan dark:hover:text-gray-900',
+    'border border-cyan dark:text-white hover:bg-cyan dark:hover:text-gray-900 rounded-lg',
   'green-outline': 'border-green text-green hover:bg-green hover:text-gray-900',
   'purple-outline':
     'border-purple text-purple hover:bg-purple hover:text-gray-900',
