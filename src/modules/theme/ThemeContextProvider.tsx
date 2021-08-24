@@ -11,11 +11,7 @@ const ThemeContextProvider: React.FC<any> = ({ children }) => {
   const [theme, setTheme] = React.useState<'light' | 'dark'>('light');
 
   React.useEffect(() => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
+    if (localStorage.theme === 'dark' || !('theme' in localStorage)) {
       document.body.classList.add('dark');
       setTheme('dark');
     } else {
