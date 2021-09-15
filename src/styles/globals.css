@@ -23,6 +23,10 @@
   --color-red: #ff6773;
   --color-purple: #a5468b;
   --color-blue: #66b1fc;
+
+  --header-height: 54px;
+
+  --scroll-width: auto;
 }
 
 h1,
@@ -66,6 +70,15 @@ p.small {
   font-size: 0.85rem;
 }
 
+header {
+  max-height: var(--header-height);
+}
+
+.stick-to-header {
+  position:sticky;
+  top: var(--header-height);
+}
+
 .loader {
   -webkit-animation: loader 1.5s linear infinite;
   animation: loader 1.5s linear infinite;
@@ -82,7 +95,11 @@ p.small {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: var(--scroll-width);
+}
+
+html {
+  scrollbar-width: var(--scroll-width);
 }
 
 /* Track */

@@ -1,7 +1,9 @@
 import React from 'react';
+
 import ReverseStackIcon from '../../ui/icons/ReverseStackIcon';
 import SearchBar from '../../ui/SearchBar';
 import EventItem from '../events/EventItem';
+import ScrollBarContainer from '../../ui/ScrollBar';
 
 const LeftSideBar: React.FC = () => {
   return (
@@ -17,24 +19,24 @@ const LeftSideBar: React.FC = () => {
       </div>
       <div>
         <div className='mb-3'>
-          <h3 className='text-xl mb-3 font-semibold'>My Events</h3>
-          <div className='md:h-[250px] pb-5 pr-2 md:overflow-y-scroll'>
-            {Array(4)
-              .fill(0)
-              .map((_, i) => {
-                return <EventItem key={i} />;
-              })}
-          </div>
+          <h3 className='text-xl mb-5 font-semibold'>My Events</h3>
+            <ScrollBarContainer className='md:h-[250px] pr-2'>
+              {Array(4)
+                .fill(0)
+                .map((_, i) => {
+                  return <EventItem key={i} bottomBorder={i != 3} />;
+                })}
+            </ScrollBarContainer>
         </div>
         <div className='mb-3'>
           <h3 className='text-xl mb-3 font-semibold'>Other Events</h3>
-          <div className='md:h-[250px] pb-5 pr-2 md:overflow-y-scroll'>
-            {Array(4)
-              .fill(0)
-              .map((_, i) => {
-                return <EventItem key={i} />;
-              })}
-          </div>
+          <ScrollBarContainer className='md:h-[250px] pr-2'>
+              {Array(4)
+                .fill(0)
+                .map((_, i) => {
+                  return <EventItem key={i} bottomBorder={i != 3} />;
+                })}
+          </ScrollBarContainer>
         </div>
       </div>
     </div>

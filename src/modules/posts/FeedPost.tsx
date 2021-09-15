@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from '../../ui/Avatar';
 import FeedClubTag from '../../ui/FeedClubTag';
-import { ChatAltIcon, ThumbUpIcon } from '@heroicons/react/outline';
+import { ChatAltIcon, ThumbUpIcon, ShareIcon } from '@heroicons/react/outline';
 import PostGallery from './PostGallery';
 import IconButton from '../../ui/IconButton';
 import { DotsHorizontalIcon } from '@heroicons/react/solid';
@@ -29,7 +29,7 @@ const FeedPost: React.FC = () => {
           </div>
 
           <div className='text-right'>
-            <IconButton className=''>
+            <IconButton className='pr-0'>
               <DotsHorizontalIcon className='w-4 h-4 text-cyan' />
             </IconButton>
             <div className='gap-2 hidden lg:flex'>
@@ -75,7 +75,7 @@ const FeedPost: React.FC = () => {
           {/* <hr className='border border-gray-disabled mb-2 mt-0.5' /> */}
 
           {/* reaction buttons */}
-          <div className='grid grid-cols-2'>
+          <div className='grid grid-cols-3'>
             <button className='flex items-center justify-center py-1'>
               <span className='mr-1'>
                 <ThumbUpIcon className='inline h-5 w-5 text-cyan' />
@@ -87,6 +87,12 @@ const FeedPost: React.FC = () => {
                 <ChatAltIcon className='inline h-5 w-5 text-cyan' />
               </span>
               <span className='text-sm'>Comment</span>
+            </button>
+            <button className='flex items-center justify-center py-1'>
+              <span className='mr-1'>
+                <ShareIcon className='inline h-5 w-5 text-cyan' />
+              </span>
+              <span className='text-sm'>Share</span>
             </button>
           </div>
         </div>
