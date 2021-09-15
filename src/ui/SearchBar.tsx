@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
       <SearchIcon className='w-4 h-4 mr-1 text-cyan' />
       <input
         type='text'
-        placeholder='search...'
+        placeholder='Search...'
         className='bg-gray-800 w-full focus:outline-none text-sm'
       />
     </div>

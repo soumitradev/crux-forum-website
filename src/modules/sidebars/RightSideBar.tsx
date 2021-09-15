@@ -2,6 +2,7 @@ import { SearchIcon } from '@heroicons/react/outline';
 import React from 'react';
 import Button from '../../ui/Button';
 import ClubTag from '../../ui/ClubTag';
+import FeedClubTag from '../../ui/FeedClubTag';
 
 const RightSideBar: React.FC = () => {
   const clubs = [
@@ -9,6 +10,13 @@ const RightSideBar: React.FC = () => {
     'Similar suggestions?',
     'new association xyz',
     'club xyz',
+  ];
+
+  const colors = [
+    'red',
+    'purple',
+    'cyan',
+    'blue'
   ];
 
   return (
@@ -25,16 +33,19 @@ const RightSideBar: React.FC = () => {
         <h3 className='text-xl mb-3 font-semibold'>Following</h3>
         <div className='mb-6'>
           <div className='mb-2'>
-            <div className='mr-2 inline-block mb-2'>
-              <ClubTag name='Crux' color='red' />
-            </div>
-
-            <div className='mr-2 inline-block mb-2'>
-              <ClubTag name='Cultural club' color='purple' />
-            </div>
-            <div className='mr-2 inline-block mb-2'>
-              <ClubTag name='Sangam Regional Assoc' color='green' />
-            </div>
+            {Array(4)
+              .fill(0)
+              .map((_, i) => {
+                return (
+                  <div key={i} className='mr-2 inline-block mb-2'>
+                    <FeedClubTag
+                      name={clubs[Math.floor(Math.random() * 4)]}
+                      className='text-xs'
+                      color={colors[Math.floor(Math.random() * 4)]}
+                    />
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
@@ -58,8 +69,8 @@ const RightSideBar: React.FC = () => {
               .map((_, i) => {
                 return (
                   <div key={i} className='mr-2 inline-block mb-2'>
-                    <ClubTag
-                      name={clubs[Math.floor(Math.random() * 3)]}
+                    <FeedClubTag
+                      name={clubs[Math.floor(Math.random() * 4)]}
                       className='text-xs'
                     />
                   </div>

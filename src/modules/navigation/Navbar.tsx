@@ -7,7 +7,7 @@ import { BellIcon, CogIcon } from '@heroicons/react/outline';
 
 interface NavbarProps {}
 
-const Navbar: React.FC<NavbarProps> = ({}) => {
+const Navbar: React.FC<NavbarProps> = () => {
   return (
     <>
       <header className='px-4 md:px-8 bg-gray-900 z-20 py-1 flex items-center justify-between sticky top-0'>

@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.tsx', './public/index.html'],
@@ -59,5 +61,43 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(function({addUtilities}) {
+      const scrollBarUtils = {
+        '.scrollhost-container': {
+          position: 'relative',
+          height: '100%'
+        },
+        '.scrollhost': {
+          'scrollbar-width': 'none',
+          '-ms-overflow-style': 'none',
+          '&::webkit-scrollbar': {
+            display: 'none'
+          }
+        },
+        '.scrollbar': {
+          width: '10px',
+          height: '100%',
+          position: 'absolute',
+          right: '-6px',
+          top: '0',
+          bottom: '0',
+          'background-color': 'rgba(0, 0, 0, 0)',
+          'border-radius': '7px',
+          transition: 'opacity 0.1s'
+        },
+        '.scroll-thumb': {
+          opacity: '1',
+          width: '3px',
+          height: '20px',
+          position: 'absolute',
+          top: '0',
+          'border-radius': '2px',
+          'background-color': 'var(--color-cyan)'
+        }
+      };
+
+      addUtilities(scrollBarUtils);
+    })
+  ],
 };
