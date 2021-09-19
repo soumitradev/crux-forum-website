@@ -6,29 +6,30 @@ import { ThemeContext } from './ThemeContextProvider';
 interface ThemeTogglerProps {}
 
 const ThemeToggler: React.FC<ThemeTogglerProps> = ({}) => {
-  const { theme } = React.useContext(ThemeContext);
-  const [active, setActive] = React.useState<boolean>(false);
+	const { theme } = React.useContext(ThemeContext);
+	const [active, setActive] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
-    setActive(theme === 'dark');
-  }, [theme]);
+	React.useEffect(() => {
+		setActive(theme === 'dark');
+	}, [theme]);
 
-  return (
-    <Switch
-      left={
-        theme === 'light' ? (
-          <MoonIcon className='h-4 w-4' />
-        ) : (
-          <SunIcon className='h-4 w-4' />
-        )
-      }
-      data-testid='toggler'
-      active={active}
-      toggleActive={() => setActive(!active)}
-      variant='purple'
-      onChange={() => {}}
-    />
-  );
+	return (
+		<Switch
+			left={
+				theme === 'light' ? (
+					<MoonIcon className="h-4 w-4" />
+				) : (
+					<SunIcon className="h-4 w-4" />
+				)
+			}
+			id="theme"
+			data-testid="toggler"
+			active={active}
+			toggleActive={() => setActive(!active)}
+			variantChecked="purple"
+			onChange={() => {}}
+		/>
+	);
 };
 
 export default ThemeToggler;

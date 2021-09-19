@@ -1,7 +1,11 @@
-.switchBtn {
-  @apply relative inline-flex flex-shrink-0  border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75;
+.switchInput {
+	@apply h-0 w-0 hidden;
+}
+
+.switchLabel {
+	@apply flex items-center content-between cursor-pointer relative rounded-full transition-colors;
 }
 
 .switchThumb {
-  @apply pointer-events-none inline-block  rounded-full bg-black shadow-lg transform ring-0 transition ease-in-out duration-200;
+	@apply absolute transition-all shadow-md rounded-full;
 }

@@ -4,11 +4,11 @@
 
 // @ts-ignore
 module.exports = (on, config) => {
-  require('@cypress/code-coverage/task')(on, config);
+	require('@cypress/code-coverage/task')(on, config);
 
-  if (config.testingType === 'component') {
-    require('@cypress/react/plugins/next')(on, config);
-  }
+	if (config.testingType === 'component') {
+		require('@cypress/react/plugins/next')(on, config);
+	}
 
-  return config;
+	return config;
 };
