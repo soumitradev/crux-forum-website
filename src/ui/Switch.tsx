@@ -1,79 +1,99 @@
 import React from 'react';
-import { Switch as HSwitch } from '@headlessui/react';
 import classes from './styles/Switch.module.css';
 import clsx from 'clsx';
 
 const variants = {
-  cyan: 'bg-cyan',
-  green: 'bg-green',
-  red: 'bg-red',
-  purple: 'bg-purple',
+	cyan: 'bg-cyan',
+	green: 'bg-green',
+	red: 'bg-red',
+	purple: 'bg-purple',
+	gray: 'bg-gray-900',
 };
 
 const sizes = {
-  sm: {
-    bg: 'h-[20px] w-[44px]',
-    thumb: 'h-[17px] w-[17px]',
-    active: 'translate-x-6',
-  },
-  md: {
-    bg: 'h-[30px] w-[65px]',
-    thumb: 'h-[27px] w-[27px]',
-    active: 'translate-x-[34px]',
-  },
+	xs: {
+		bg: 'h-[17px] w-[34px]',
+		thumb: 'h-[17px] w-[17px]',
+		active: 'w-[21px]',
+		checked: 'left-[32px] translate-x-[-100%]',
+	},
+	sm: {
+		bg: 'h-[25px] w-[50px]',
+		thumb: 'h-[22px] w-[22px]',
+		active: 'w-[28px]',
+		checked: 'left-[48px] translate-x-[-100%]',
+	},
+	md: {
+		bg: 'h-[38px] w-[75px]',
+		thumb: 'h-[34px] w-[34px]',
+		active: 'w-[43px]',
+		checked: 'left-[73px] translate-x-[-100%]',
+	},
+	lg: {
+		bg: 'h-[50px] w-[100px]',
+		thumb: 'h-[45px] w-[45px]',
+		active: 'w-[60px]',
+		checked: 'left-[98px] translate-x-[-100%]',
+	},
 };
 
 interface SwitchProps {
-  active: boolean;
-  toggleActive: () => void;
-  onChange: () => void;
-  left?: React.ReactNode;
-  right?: React.ReactNode;
-  variant?: keyof typeof variants;
-  size?: 'md' | 'sm';
+	active: boolean;
+	id: string;
+	toggleActive: () => void;
+	onChange: (val: boolean) => void;
+	left?: React.ReactNode;
+	right?: React.ReactNode;
+	variantChecked?: keyof typeof variants;
+	variantUnchecked?: keyof typeof variants;
+	size?: keyof typeof sizes;
 }
 
 const Switch: React.FC<SwitchProps> = ({
-  active,
-  left,
-  right,
-  toggleActive,
-  onChange,
-  variant = 'cyan',
-  size = 'md',
+	id,
+	active,
+	left,
+	right,
+	toggleActive,
+	onChange,
+	variantChecked = 'cyan',
+	variantUnchecked = 'gray',
+	size = 'md',
 }) => {
-  return (
-    <>
-      <div className='flex gap-2 items-center'>
-        {left ? left : null}
-        <HSwitch
-          data-testid='switch'
-          checked={active}
-          onChange={() => {
-            toggleActive();
-            onChange();
-          }}
-          className={clsx([
-            classes.switchBtn,
-            sizes[size].bg,
-            active ? variants[variant] : 'bg-gray-accent',
-          ])}
-        >
-          <span className='sr-only'>Use setting</span>
-          <span
-            data-testid='switch-thumb'
-            aria-hidden='true'
-            className={clsx([
-              classes.switchThumb,
-              sizes[size].thumb,
-              active ? sizes[size].active : 'translate-x-0',
-            ])}
-          />
-        </HSwitch>
-        {right ? right : null}
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div className="flex items-center select-none">
+				{left ? left : null}
+				<input
+					type="checkbox"
+					id={'switch' + id}
+					className={clsx([classes.switchInput])}
+					onChange={() => onChange(!active)}
+				></input>
+				<label
+					htmlFor={'switch' + id}
+					className={clsx(
+						classes.switchLabel,
+						sizes[size].bg,
+						active ? variants[variantChecked] : variants[variantUnchecked],
+						'group',
+						left ? 'ml-3' : '',
+						right ? 'mr-3' : ''
+					)}
+				>
+					<span
+						className={clsx(
+							classes.switchThumb,
+							sizes[size].thumb,
+							active ? sizes[size].checked : 'left-[2px]',
+							`bg-white group-active:${sizes[size].active}`
+						)}
+					></span>
+				</label>
+				{right ? right : null}
+			</div>
+		</>
+	);
 };
 
 export default Switch;

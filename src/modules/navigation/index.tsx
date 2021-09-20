@@ -4,11 +4,11 @@ import Navbar from './Navbar';
 interface NavigationProps {}
 
 const Navigation: React.FC<NavigationProps> = ({}) => {
-  return (
-    <>
-      <Navbar />
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+		</>
+	);
 };
 
 export default Navigation;
